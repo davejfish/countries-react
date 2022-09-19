@@ -11,5 +11,6 @@
 }
 
 .card img {
-  width: 125px;
+  width: 100px;
+  margin: 10px
 }
