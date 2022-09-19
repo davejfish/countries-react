@@ -1,13 +1,13 @@
 import './Main.css';
 import CountryCards from '../../Countries/Countries';
-
-const arr = [1, 2, 3, 4, 5];
+import { useCountries } from '../../../hooks/useCountries';
 
 export default function Main() {
+  const { countries } = useCountries();
   return (
     <div className='autoCards'>
-      {arr.map((country) => (
-        <CountryCards key={country} />
+      {countries.map((country) => (
+        <CountryCards key={country.id} {...country} />
       ))}
     </div>
   );
