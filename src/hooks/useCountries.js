@@ -6,14 +6,18 @@ export function useCountries() {
   const [query, setQuery] = useState('');
   const [searchParam, setSearchParam] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
       try {
+        setLoading(true);
         const data = await fetchCountries();
         setCountries(data);
+        setLoading(false);
       } catch (e) {
         setError(e.message);
+        setLoading(false);
       }
     }
     fetchData();
@@ -36,5 +40,5 @@ export function useCountries() {
     }
   };
 
-  return { filterCountries, setQuery, searchParam, setSearchParam, error };
+  return { loading, filterCountries, setQuery, searchParam, setSearchParam, error };
 }
