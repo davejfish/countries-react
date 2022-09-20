@@ -12,7 +12,7 @@ export default function Main() {
         <label>
           search by continent: 
           <input onChange={(e) => {
-            setContinent(e.target.value);
+            setContinent(e.target.value.toLowerCase());
           }}></input>
         </label>
       </div>

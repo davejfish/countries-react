@@ -19,11 +19,11 @@ export function useCountries() {
   }, []);
 
   const filterCountries = () => {
-    // return (continent === '') ? countries : countries.filter((country) => {
-    //   country.continent === continent;
-    // });
-    if (continent === '') return countries;
-    return countries.filter((country) => country.continent === continent);
+    return (continent === '') ? countries : countries.filter((country) => {
+      if (country.continent)
+        return country.continent.toLowerCase().includes(continent);
+      return false;
+    });
   };
 
   return { filterCountries, setContinent, error };
