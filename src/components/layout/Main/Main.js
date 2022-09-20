@@ -3,12 +3,23 @@ import CountryCards from '../../Countries/Countries';
 import { useCountries } from '../../../hooks/useCountries';
 
 export default function Main() {
-  const { countries } = useCountries();
+  const { filterCountries, setContinent } = useCountries();
   return (
-    <div className='autoCards'>
-      {countries.map((country) => (
-        <CountryCards key={country.id} {...country} />
-      ))}
-    </div>
+    <main>
+      <h2>Countries</h2>
+      <div className='search'>
+        <label>
+          search by continent: 
+          <input onChange={(e) => {
+            setContinent(e.target.value);
+          }}></input>
+        </label>
+      </div>
+      <div className='autoCards'>
+        {filterCountries().map((country) => (
+          <CountryCards key={country.id} {...country} />
+        ))}
+      </div>
+    </main>
   );
 }
