@@ -1,0 +1,11 @@
+.search {
+ padding: 5px; 
+}
+
+.search button {
+  margin: 5px;
+}
+
+.search select {
+  margin: 5px 10px;
+}
