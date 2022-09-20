@@ -10,7 +10,13 @@ export function useCountries() {
       const data = await fetchCountries();
       setCountries(data);
     }
-    fetchData();
+    try {
+      fetchData();
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.log(e);
+    }
+    
   }, []);
 
   const filterCountries = () => {
