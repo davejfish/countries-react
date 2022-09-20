@@ -3,10 +3,11 @@ import CountryCards from '../../Countries/Countries';
 import { useCountries } from '../../../hooks/useCountries';
 
 export default function Main() {
-  const { filterCountries, setContinent } = useCountries();
+  const { filterCountries, setContinent, error } = useCountries();
   return (
     <main>
       <h2>Countries</h2>
+      <span className='error'>{error}</span>
       <div className='search'>
         <label>
           search by continent: 
