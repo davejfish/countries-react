@@ -22,7 +22,6 @@ export function useCountries() {
     return (continent === '') ? countries : countries.filter((country) => {
       if (country.continent)
         return country.continent.toLowerCase().includes(continent);
-      return false;
     });
   };
 
