@@ -37,6 +37,12 @@ export function useCountries() {
           if (country.name)
             return country.name.toLowerCase().includes(query);
         });
+      default:
+        return countries.filter((country) => {
+          if (country.continent) {
+            return country.continent === param;
+          }
+        });
     }
   };
 
