@@ -1,0 +1,16 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+}
+
+.autoCards {
+  max-width: 100%;
+  min-width: 400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-rows: repeat(200px, auto-fit);
+  grid-gap: 15px;
+}
